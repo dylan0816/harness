@@ -1,0 +1,39 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cmd //c \"dir /AL .claude\\\\\\\\skills\")",
+      "Bash(cmd //c \"dir /A .claude\\\\\\\\skills\")",
+      "Bash(cmd //c \"dir .claude\")",
+      "Skill(update-config)",
+      "Skill(update-config:*)",
+      "Bash(powershell -NoProfile -Command \"Get-Item AGENTS.md, CLAUDE.md, README.md -ErrorAction SilentlyContinue | Select-Object Name, LinkType, Target | Format-Table -AutoSize\")",
+      "Bash(powershell -NoProfile -Command \"New-Item -ItemType SymbolicLink -Path 'F:/alicode/proj/dev-harness/.claude/__test_link.md' -Target 'F:/alicode/proj/dev-harness/CLAUDE.md' -Force | Out-Null; Get-Item 'F:/alicode/proj/dev-harness/.claude/__test_link.md' | Select-Object Name, LinkType\")",
+      "Bash(powershell -NoProfile -File F:/alicode/proj/dev-harness/.claude/hooks/check-link-write.ps1)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(powershell -NoProfile -File F:/alicode/proj/dev-harness/.claude/hooks/check-end-marker.ps1)",
+      "Bash(powershell -NoProfile -File F:/alicode/proj/dev-harness/.claude/__debug.ps1)",
+      "Bash(powershell -NoProfile -Command \"Get-Item 'F:/alicode/proj/dev-harness/.claude/__test_transcript_fail.jsonl' | Select-Object Length; [System.IO.File]::ReadAllBytes\\('F:/alicode/proj/dev-harness/.claude/__test_transcript_fail.jsonl'\\)[0..10]\")",
+      "Bash(powershell -NoProfile -Command \"Remove-Item 'F:/alicode/proj/dev-harness/.claude/__test_link.md','F:/alicode/proj/dev-harness/.claude/__test_transcript_pass.jsonl','F:/alicode/proj/dev-harness/.claude/__test_transcript_fail.jsonl','F:/alicode/proj/dev-harness/.claude/__debug.ps1' -Force -ErrorAction SilentlyContinue; Get-ChildItem F:/alicode/proj/dev-harness/.claude/ -Force | Select-Object Name\")",
+      "Bash(powershell -NoProfile -File F:/alicode/proj/dev-harness/.claude/__verify.ps1)",
+      "Bash(powershell -NoProfile -Command \"Remove-Item 'F:/alicode/proj/dev-harness/.claude/__verify.ps1' -Force\")",
+      "Bash(git -C F:/alicode/proj/dev-harness mv skills .claude/skills)",
+      "Bash(git -C F:/alicode/proj/dev-harness status --short)",
+      "Bash(powershell -NoProfile -Command \"Get-ChildItem F:/alicode/proj/dev-harness/.claude/skills/ | Select-Object Name; Write-Host '---'; Test-Path F:/alicode/proj/dev-harness/skills\")",
+      "Bash(powershell -NoProfile -Command \"\\(Get-Content F:/alicode/proj/dev-harness/CLAUDE.md | Measure-Object -Line\\).Lines\")",
+      "Bash(git -C F:/alicode/proj/dev-harness diff HEAD -- CLAUDE.md)",
+      "Bash(powershell -NoProfile -File F:/alicode/proj/dev-harness/.claude/__test.ps1)",
+      "Bash(powershell -NoProfile -Command \"Remove-Item F:/alicode/proj/dev-harness/.claude/__t*.jsonl, F:/alicode/proj/dev-harness/.claude/__test.ps1 -Force\")",
+      "Bash(powershell *)",
+      "Bash(cmd *)",
+      "PowerShell($item = Get-Item \"F:\\\\alicode\\\\proj\\\\dev-harness\\\\CLAUDE.md\" -Force -ErrorAction Stop; Write-Host \"Name: $\\($item.Name\\)\"; Write-Host \"LinkType: $\\($item.LinkType\\)\"; Write-Host \"Attributes: $\\($item.Attributes\\)\")",
+      "Bash(git *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell($bytes = [System.IO.File]::ReadAllBytes\\('F:\\\\alicode\\\\proj\\\\dev-harness\\\\init-ai-skills.ps1'\\); if \\($bytes[0] -eq 0xEF -and $bytes[1] -eq 0xBB -and $bytes[2] -eq 0xBF\\) { Write-Host \"UTF-8 BOM: YES\" } else { Write-Host \\(\"First 4 bytes: {0:X2} {1:X2} {2:X2} {3:X2}\" -f $bytes[0], $bytes[1], $bytes[2], $bytes[3]\\) })",
+      "PowerShell(Get-ChildItem -Recurse -Depth 3 | Where-Object { $_.PSIsContainer } | ForEach-Object { $_.FullName.Replace\\(\"F:\\\\alicode\\\\proj\\\\dev-harness\\\\\", \"\"\\) } | Sort-Object)",
+      "PowerShell($env:CLAUDE_CODE_TRANSCRIPT_PATH)",
+      "Bash(python .claude/hooks/check-end-marker.py)",
+      "Bash(python *)",
+      "Bash(printf '{\"transcript_path\":\"C:\\\\\\\\\\\\\\\\Users\\\\\\\\\\\\\\\\yuhai\\\\\\\\\\\\\\\\.claude\\\\\\\\\\\\\\\\projects\\\\\\\\\\\\\\\\F--alicode-proj-dev-harness\\\\\\\\\\\\\\\\70d7105e-0917-4845-bd3a-a17407960e7f.jsonl\"}')"
+    ]
+  }
+}
