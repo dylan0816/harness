@@ -9,18 +9,3 @@
 # 示例 (去掉 # 并修改为你的实际路径):
 # D:\projects\my-game-server
 # D:\projects\my-admin-panel
-
-F:\alicode\proj\psd-slicer
-F:\alicode\proj\quantitative
-F:\alicode\proj\xiao-kui-fund
-F:\alicode\proj\akui-doc
-F:\alicode\proj\minigame-core
-F:\alicode\proj\funds
-/Users/dylan/alicode/quantitative
-/Users/dylan/alicode/commonn-deploy
-/Users/dylan/alicode/funds
-/Users/dylan/alicode/libs/psd-slicer
-/Users/dylan/alicode/libs/minigame-core
-/Users/dylan/alicode/minigame/xiao-kui-fund
-/Users/dylan/alicode/minigame/crawler
-/Users/dylan/alicode/minigame/akui-doc
