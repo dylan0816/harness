@@ -77,11 +77,9 @@ harness/
     │   └── save-transcript.py     # 会话结束时存档 transcript
     └── skills/
         ├── context-guard/         # 上下文沉淀评估
-        ├── game-config-builder/   # 生成游戏配置表/Excel
         ├── git-commit/            # 自动 Git 提交与推送
         ├── golang-patterns/       # Go 代码模式、审查与重构
         ├── key-points-mem/        # 通用知识库（REAP R 阶段调用）
-        ├── narrative-designer/    # 叙事与世界观设计
         ├── python-expert/         # Python 编码、类型提示、调试
         └── skill-creator/         # 创建/注册新技能
 ```
@@ -179,16 +177,14 @@ Hook 由 `.claude/settings.json` 驱动，分发到目标工程后由 Claude Cod
 
 每个技能通过 `SKILL.md` 定义触发规则和使用说明，AI 按需加载：
 
-| 技能                    | 什么时候触发                         |
-| ----------------------- | ------------------------------------ |
-| **key-points-mem**      | REAP 的 R 阶段默认调用，检索通用知识 |
-| **context-guard**       | 每轮结束，评估上下文沉淀价值         |
-| **git-commit**          | “提交”、“commit”、“push”             |
-| **golang-patterns**     | Go 代码编写、审查、重构              |
-| **python-expert**       | Python 编码、类型提示、调试          |
-| **game-config-builder** | 生成游戏配置表/Excel                 |
-| **narrative-designer**  | 剧情、世界观、角色与叙事结构设计     |
-| **skill-creator**       | “创建新技能”、“注册 skill”           |
+| 技能                | 什么时候触发                         |
+| ------------------- | ------------------------------------ |
+| **key-points-mem**  | REAP 的 R 阶段默认调用，检索通用知识 |
+| **context-guard**   | 每轮结束，评估上下文沉淀价值         |
+| **git-commit**      | "提交"、"commit"、"push"             |
+| **golang-patterns** | Go 代码编写、审查、重构              |
+| **python-expert**   | Python 编码、类型提示、调试          |
+| **skill-creator**   | "创建新技能"、"注册 skill"           |
 
 ---
 
